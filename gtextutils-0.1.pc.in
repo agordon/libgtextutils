@@ -1,0 +1,10 @@
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+libdir=@libdir@
+includedir=@includedir@
+
+Name: gtextutils
+Description: Gordon's text-utility classes
+Version: @VERSION@
+Libs: -L${libdir} -lgtextutils-0.1
+Cflags: -I${includedir}/gtextutils-1.0

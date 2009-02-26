@@ -10,3 +10,6 @@
 
 EXTRA_DIST = reconf configure
 SUBDIRS = m4 src doc
+
+pkgconfigdir = $(libdir)/pkgconfig
+pkgconfig_DATA = gtextutils-0.1.pc
