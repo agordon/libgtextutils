@@ -9,18 +9,14 @@
 # implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
 
-lib_LIBRARIES = libgtextutils.a
+lib_LIBRARIES = libgtextutils-0.1.a
 
-libgtextutils_a_SOURCES = stream_wrapper.cpp stream_wrapper.h \
+libgtextutils_0_1_a_SOURCES = stream_wrapper.cpp stream_wrapper.h \
 		          text_line_reader.cpp text_line_reader.h \
 			  print_utils.h
 
-libgtextutils_a_includedir = $(includedir)/gtextutils-0.1/gtextutils
+libgtextutils_0_1_a_includedir = $(includedir)/gtextutils-0.1/gtextutils
 
-libgtextutils_a_include_HEADERS = print_utils.h \
+libgtextutils_0_1_a_include_HEADERS = print_utils.h \
 		  text_line_reader.h \
 		  stream_wrapper.h
-
-#EXAMPLE_RELEASE=0:0:1
-#EXAMPLE_LIBRARY_VERSION=0:0:0
-#libgtextutils_a_LDFLAGS= -version-info $(EXAMPLE_LIBRARY_VERSION) -release $(EXAMPLE_RELEASE)

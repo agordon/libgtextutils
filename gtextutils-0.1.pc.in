@@ -7,4 +7,4 @@ Name: gtextutils
 Description: Gordon's text-utility classes
 Version: @VERSION@
 Libs: -L${libdir} -lgtextutils-0.1
-Cflags: -I${includedir}/gtextutils-1.0
+Cflags: -I${includedir}/gtextutils-0.1

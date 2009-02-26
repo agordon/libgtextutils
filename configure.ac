@@ -9,7 +9,7 @@
 # implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
 AC_INIT([Gordon-Text_utils-Library],
-        [0.0.1],
+        [0.1],
         [A. Gordon gordon@cshl.edu],
         [libgtextutils])
 AC_CONFIG_AUX_DIR(config)
