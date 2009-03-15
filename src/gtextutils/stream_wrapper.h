@@ -1,6 +1,8 @@
 #ifndef __STREAM_WRAPPER__
 #define __STREAM_WRAPPER__
 
+#include <iostream>
+#include <iosfwd>
 #include <fstream>
 
 class InputStreamWrapper
