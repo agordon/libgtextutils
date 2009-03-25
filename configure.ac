@@ -9,7 +9,7 @@
 # implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
 AC_INIT([Gordon-Text_utils-Library],
-        [0.1],
+        [0.2],
         [A. Gordon gordon@cshl.edu],
         [libgtextutils])
 AC_CONFIG_AUX_DIR(config)
@@ -67,7 +67,8 @@ AC_CONFIG_FILES([
    m4/Makefile
    src/Makefile
    src/gtextutils/Makefile
-   gtextutils-0.1.pc
+   gtextutils-0.2.pc
+   tests/Makefile
 ])
 
 AC_OUTPUT

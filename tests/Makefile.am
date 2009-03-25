@@ -8,8 +8,15 @@
 # WITHOUT ANY WARRANTY, to the extent permitted by law; without even the
 # implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
-EXTRA_DIST = reconf configure
-SUBDIRS = m4 src doc tests
 
-pkgconfigdir = $(libdir)/pkgconfig
-pkgconfig_DATA = gtextutils-0.2.pc
+
+check_PROGRAMS = test_container_join \
+		 test_natural_sort
+
+TESTS = $(check_PROGRAMS)
+
+LDADD = $(top_srcdir)/src/gtextutils/libgtextutils-$(VERSION).a
+INCLUDES = -I$(top_srcdir)/src
+
+test_container_join_SOURCES = test_container_join.cpp
+test_natural_sort_SOURCES = test_natural_sort.cpp

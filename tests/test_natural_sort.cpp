@@ -15,33 +15,45 @@
    You should have received a copy of the GNU Affero General Public License
    along with this program.  If not, see <http://www.gnu.org/licenses/>
 */
-#ifndef __PRINT_UTILS_H__
-#define __PRINT_UTILS_H__
-
+#include <vector>
 #include <string>
-#include <sstream>
+#include <iostream>
 
-template<class COLLECTION>
-inline
-std::string
-join_collection(const COLLECTION &col, const std::string& delimiter="\t")
+#include <gtextutils/container_join.h>
+
+#include <gtextutils/natsort.h>
+
+/*
+ * Tiny test suite for natural sort
+ */
+
+using namespace std;
+
+int main()
 {
-	std::ostringstream os;
-	bool first = true ;
+	vector<string> v;
 
-	typename COLLECTION::const_iterator it = col.begin();
+	v.push_back("chr4");
+	v.push_back("chr2");
+	v.push_back("chr10");
+	v.push_back("chr11");
+	v.push_back("chr1");
+	v.push_back("chrX");
+	v.push_back("chr20");
+	v.push_back("ChR13");
 
-	while ( it != col.end() ) {
-		if ( first ) 
-			first = false;
-		else
-			os << delimiter ;
-		os << *it ;
-		it++ ;
-	}
+	sort(v.begin(), v.end());
 
-	return os.str();
+	cout << "Regular sort:                    " << join(v) << endl;
+
+	sort(v.begin(), v.end(), natural_sort_predicate() );
+	cout << "Natural sort (case sensitive):   " << join(v) << endl;
+
+	sort(v.begin(), v.end(), natural_sort_ignore_case_predicate() );
+	cout << "Natural sort (case-insensitive): " << join(v) << endl;
+
+
+
+
+	return 0;
 }
-
-#endif
-
