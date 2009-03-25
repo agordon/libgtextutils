@@ -29,6 +29,7 @@ private:
 	size_t current_line_number;
 	std::string current_line_string ;
 	std::istringstream current_line_stream ;
+	bool unget_line_active ;
 
 	TextLineReader(const TextLineReader&);
     	TextLineReader& operator=(const TextLineReader&);
@@ -40,8 +41,22 @@ public:
 
 	bool next_line() ;
 
+	void unget_line ( const std::string& line ) 
+	{ 
+		unget_line_active = true ;
+		current_line_string = line ;
+	}
+	void unget_current_line () { unget_line_active = true; } 
+
+	//explicit conversions
 	const std::string& line_string() const { return current_line_string; }
 	std::istringstream& line_stream() { return current_line_stream; }
+
+	//implicit conversions
+	operator const std::string& () const { return line_string() ; }
+	operator std::string() const { return line_string(); }
+	operator std::istream& () { return line_stream(); }
+
 };
 
 #endif

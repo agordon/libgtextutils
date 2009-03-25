@@ -24,14 +24,18 @@ using namespace std;
 
 
 TextLineReader::TextLineReader(istream& _input_stream) :
-	input_stream(_input_stream), current_line_number(0)
+	input_stream(_input_stream), current_line_number(0), unget_line_active(false)
 {
 }
 
 bool TextLineReader::next_line() 
 {
-	current_line_number++;
-	getline(input_stream, current_line_string ) ;
+	if (unget_line_active) {
+		unget_line_active = false;
+	} else {
+		current_line_number++;
+		getline(input_stream, current_line_string ) ;
+	}
 
 	current_line_stream.str( current_line_string ) ;
 	current_line_stream.seekg(0, ios_base::beg );
