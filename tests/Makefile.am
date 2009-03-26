@@ -16,7 +16,8 @@ check_PROGRAMS = test_container_join \
 		 test_natural_sort \
 		 test_input_stream_wrapper \
 		 test_text_reader \
-		 test_text_reader_unget
+		 test_text_reader_unget \
+		 test_fd_outbuf
 
 TESTS = $(check_PROGRAMS)
 
@@ -28,4 +29,5 @@ test_natural_sort_SOURCES = test_natural_sort.cpp
 test_input_stream_wrapper_SOURCES = test_input_stream_wrapper.cpp
 test_text_reader_SOURCES = test_text_reader.cpp
 test_text_reader_unget_SOURCES = test_text_reader_unget.cpp
+test_fd_outbuf_SOURCES = test_fd_outbuf.cpp
 
