@@ -35,10 +35,14 @@ class tuple_parser_premature_end_of_line : public std::runtime_error
 {
 private:
 	std::string _what;
+	size_t	_expected_columns ;
+	size_t	_actual_columns;
 
 public:
 	tuple_parser_premature_end_of_line(size_t expected_columns, size_t actual_columns) :
-		std::runtime_error("")
+		std::runtime_error(""),
+		_expected_columns(expected_columns),
+		_actual_columns(actual_columns)
 	{
 		std::ostringstream os;
 		os << "Error: premature end-of-line, expecting at least " 
@@ -48,6 +52,16 @@ public:
 		  << " columns" ;
 
 		_what = os.str();
+	}
+
+	size_t expected_columns() const
+	{
+		return _expected_columns ;
+	}
+
+	size_t actual_columns() const
+	{
+		return _actual_columns;
 	}
 
 	virtual const char* what() const throw()
@@ -74,16 +88,23 @@ class tuple_parser_parsing_error: public std::runtime_error
 {
 private:
 	std::string _what;
+	size_t	_column ;
 
 public:
 	tuple_parser_parsing_error(size_t column) :
-		std::runtime_error("")
+		std::runtime_error(""),
+		_column(column)
 	{
 		std::ostringstream os;
 		os << "Error: invalid input in column "
 		  << column ;
 
 		_what = os.str();
+	}
+
+	size_t column() const throw()
+	{
+		return _column;
 	}
 
 	virtual const char* what() const throw()
