@@ -16,7 +16,10 @@ libgtextutils_0_2_a_SOURCES = stream_wrapper.cpp stream_wrapper.h \
 			  container_join.h \
 			  natsort.h \
 			  strnatcmp.c strnatcmp.h \
-			  outbuf3.hpp
+			  outbuf3.hpp \
+			  tuple_parser.h \
+			  inbuf1.hpp \
+			  pipe_fitter.c pipe_fitter.h
 
 libgtextutils_0_2_a_includedir = $(includedir)/gtextutils-0.2/gtextutils
 
@@ -25,4 +28,7 @@ libgtextutils_0_2_a_include_HEADERS = container_join.h \
 		  stream_wrapper.h \
 		  natsort.h \
 		  strnatcmp.h \
-		  outbuf3.hpp
+		  outbuf3.hpp \
+		  inbuf1.hpp \
+		  tuple_parser.h \
+		  pipe_fitter.h
