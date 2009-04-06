@@ -20,6 +20,7 @@ check_PROGRAMS = test_container_join \
 		 test_fd_outbuf \
 		 test_fd_inbuf \
 		 test_in_out_buf \
+		 test_tuple_parser \
 		 test_pipe_fitter
 
 TESTS = $(check_PROGRAMS)
@@ -36,3 +37,4 @@ test_fd_outbuf_SOURCES = test_fd_outbuf.cpp
 test_fd_inbuf_SOURCES = test_fd_inbuf.cpp
 test_in_out_buf_SOURCES = test_in_out_buf.cpp
 test_pipe_fitter_SOURCES = test_pipe_fitter.c
+test_tuple_parser_SOURCES = test_tuple_parser.cpp
