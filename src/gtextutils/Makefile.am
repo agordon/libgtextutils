@@ -9,9 +9,9 @@
 # implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
 
-lib_LIBRARIES = libgtextutils-0.2.a
+lib_LIBRARIES = libgtextutils-0.3.a
 
-libgtextutils_0_2_a_SOURCES = stream_wrapper.cpp stream_wrapper.h \
+libgtextutils_0_3_a_SOURCES = stream_wrapper.cpp stream_wrapper.h \
 		          text_line_reader.cpp text_line_reader.h \
 			  container_join.h \
 			  natsort.h \
@@ -21,9 +21,9 @@ libgtextutils_0_2_a_SOURCES = stream_wrapper.cpp stream_wrapper.h \
 			  inbuf1.hpp \
 			  pipe_fitter.c pipe_fitter.h
 
-libgtextutils_0_2_a_includedir = $(includedir)/gtextutils-0.2/gtextutils
+libgtextutils_0_3_a_includedir = $(includedir)/gtextutils-$(VERSION)/gtextutils
 
-libgtextutils_0_2_a_include_HEADERS = container_join.h \
+libgtextutils_0_3_a_include_HEADERS = container_join.h \
 		  text_line_reader.h \
 		  stream_wrapper.h \
 		  natsort.h \

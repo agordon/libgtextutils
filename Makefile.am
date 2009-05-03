@@ -12,4 +12,4 @@ EXTRA_DIST = reconf configure
 SUBDIRS = m4 src doc tests
 
 pkgconfigdir = $(libdir)/pkgconfig
-pkgconfig_DATA = gtextutils-0.2.pc
+pkgconfig_DATA = gtextutils-0.3.pc

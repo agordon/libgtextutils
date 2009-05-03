@@ -9,7 +9,7 @@
 # implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
 AC_INIT([Gordon-Text_utils-Library],
-        [0.2],
+        [0.3],
         [A. Gordon gordon@cshl.edu],
         [libgtextutils])
 AC_CONFIG_AUX_DIR(config)
@@ -60,6 +60,18 @@ else
 fi
 
 
+dnl --enable-tuple-parser-check
+AC_ARG_ENABLE(tuple-parser-check,
+[  --enable-tuple-parser-check	Enable Tuple Parser Check (default disabled, requires g++ > 4.3.2)],
+[case "${enableval}" in
+  yes) tuple_parser_check=true ;;
+  no)  tuple_parser_check=false ;;
+  *) AC_MSG_ERROR(bad value ${enableval} for --enable-tuple-parser-check) ;;
+esac],[tuple_parser_check=false])
+AM_CONDITIONAL([TUPLE_PARSER_CHECK], [test x$tuple_parser_check = xtrue])
+
+
+
 AC_CONFIG_FILES([
    Makefile
    README
@@ -67,7 +79,7 @@ AC_CONFIG_FILES([
    m4/Makefile
    src/Makefile
    src/gtextutils/Makefile
-   gtextutils-0.2.pc
+   gtextutils-0.3.pc
    tests/Makefile
 ])
 
