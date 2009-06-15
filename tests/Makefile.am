@@ -28,6 +28,7 @@ check_PROGRAMS = test_container_join \
 		 test_fd_inbuf \
 		 test_in_out_buf \
 		 test_pipe_fitter \
+		 test_string_tokenize \
 		 $(TUPLE_PROG)
 
 TESTS = $(check_PROGRAMS)
@@ -46,3 +47,4 @@ test_in_out_buf_SOURCES = test_in_out_buf.cpp tests_assertion.h
 test_pipe_fitter_SOURCES = test_pipe_fitter.c tests_assertion.h
 test_tuple_parser_SOURCES = test_tuple_parser.cpp tests_assertion.h
 test_tuple_parser_file_SOURCES = test_tuple_parser_file.cpp tests_assertion.h
+test_string_tokenize_SOURCES = test_string_tokenize.cpp test_assertion.h

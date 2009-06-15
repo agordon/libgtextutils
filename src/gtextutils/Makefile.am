@@ -33,4 +33,5 @@ libgtextutils_0_4_a_include_HEADERS = container_join.h \
 		  inbuf1.hpp \
 		  tuple_parser.h \
 		  exit_manip.h \
+		  string_tokenize.h \
 		  pipe_fitter.h
