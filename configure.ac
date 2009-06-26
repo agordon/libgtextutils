@@ -12,15 +12,19 @@ AC_INIT([Gordon-Text_utils-Library],
         [0.4],
         [A. Gordon gordon@cshl.edu],
         [libgtextutils])
+
 AC_CONFIG_AUX_DIR(config)
+AC_CONFIG_MACRO_DIR([m4])
 AM_CONFIG_HEADER(config.h)
 AM_INIT_AUTOMAKE([dist-bzip2])
 
-LF_CONFIGURE_CC
-LF_CONFIGURE_CXX
-LF_HOST_TYPE
-LF_SET_WARNINGS
-AC_PROG_RANLIB
+LIBGTU_CURRENT=4
+LIBGTU_REVISION=0
+LIBGTU_AGE=0
+
+AC_PROG_CC
+AC_PROG_CXX
+AC_PROG_LIBTOOL
 
 AC_DEFINE([CXX_HAS_BUGGY_FOR_LOOPS], [], [Description])
 AC_DEFINE([CXX_HAS_NO_BOOL], [], [Description])
@@ -71,6 +75,10 @@ esac],[tuple_parser_check=false])
 AM_CONDITIONAL([TUPLE_PARSER_CHECK], [test x$tuple_parser_check = xtrue])
 
 
+AC_SUBST(LIBGTU_CURRENT)
+AC_SUBST(LIBGTU_REVISION)
+AC_SUBST(LIBGTU_AGE)
+
 
 AC_CONFIG_FILES([
    Makefile
@@ -79,7 +87,7 @@ AC_CONFIG_FILES([
    m4/Makefile
    src/Makefile
    src/gtextutils/Makefile
-   gtextutils-0.4.pc
+   gtextutils.pc
    tests/Makefile
 ])
 

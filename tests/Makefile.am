@@ -33,7 +33,7 @@ check_PROGRAMS = test_container_join \
 
 TESTS = $(check_PROGRAMS)
 
-LDADD = $(top_srcdir)/src/gtextutils/libgtextutils-$(VERSION).a
+LDADD = $(top_srcdir)/src/gtextutils/libgtextutils.la
 INCLUDES = -I$(top_srcdir)/src
 
 test_container_join_SOURCES = test_container_join.cpp tests_assertion.h
@@ -47,4 +47,4 @@ test_in_out_buf_SOURCES = test_in_out_buf.cpp tests_assertion.h
 test_pipe_fitter_SOURCES = test_pipe_fitter.c tests_assertion.h
 test_tuple_parser_SOURCES = test_tuple_parser.cpp tests_assertion.h
 test_tuple_parser_file_SOURCES = test_tuple_parser_file.cpp tests_assertion.h
-test_string_tokenize_SOURCES = test_string_tokenize.cpp test_assertion.h
+test_string_tokenize_SOURCES = test_string_tokenize.cpp tests_assertion.h
