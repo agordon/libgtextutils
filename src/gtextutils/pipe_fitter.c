@@ -105,10 +105,12 @@ static int pipe_open (
 			dup2(file_fd, STDOUT_FILENO);
 	}
 
-	execlp(executable,executable,NULL);
+	execlp(executable,executable,(char*)NULL);
 
 	//Should never get here...
 	err(1,"execlp(%s) failed",executable);
+
+	return 0; //just to please gcc
 }
 
 int pipe_output_command ( const char* command, const char* output_filename, pid_t* /*OUTPUT*/ child_pid )
