@@ -12,7 +12,7 @@
 m4datadir = $(datadir)/aclocal
 
 # List your m4 macros here
-m4macros = 
+m4macros = ax_boost_base.m4 ax_boost_program_options.m4
 
 # The following is boilerplate
 m4data_DATA = $(m4macros) 
