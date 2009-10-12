@@ -5,6 +5,6 @@ includedir=@includedir@
 
 Name: gtextutils
 Description: Gordon's text-utility classes
-Version: @LIBGTU_CURRENT@
-Libs: -L${libdir} -lgtextutils.la
+Version: @VERSION@
+Libs: -L${libdir} -lgtextutils
 Cflags: -I${includedir}/gtextutils

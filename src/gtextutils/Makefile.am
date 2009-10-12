@@ -11,7 +11,7 @@
 
 lib_LTLIBRARIES = libgtextutils.la
 
-libgtextutils_la_LDFLAGS = -version-info @LIBGTU_CURRENT@:@LIBGTU_REVISION@:@LIBGTU_AGE@
+libgtextutils_la_LDFLAGS = -version-info @LIBGTU_CURRENT@:@LIBGTU_REVISION@:@LIBGTU_AGE@ -release @VERSION@
 
 libgtextutils_la_SOURCES = stream_wrapper.cpp stream_wrapper.h \
 		          text_line_reader.cpp text_line_reader.h \
