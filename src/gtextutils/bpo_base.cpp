@@ -11,6 +11,7 @@ using namespace std;
 using namespace std::tr1;
 using std::tr1::placeholders::_1;
 
+
 namespace po = boost::program_options;
 
 BPO_EasyParser::BPO_EasyParser()
@@ -43,4 +44,3 @@ void BPO_EasyParser::parse ( int argc, char* argv[] )
 		exit(1);
 	}
 }
-

@@ -20,6 +20,13 @@ class IntervalFileColumnOptions : public GenericBoostProgramOptions
 	unsigned int _multiplicity_column ;
 
 	unsigned int _max_used_column ;
+	
+	bool _bed_base ;
+	bool _zero_base ;
+	bool _one_base ;
+
+	bool _zero_based_start_coord ;
+	bool _zero_based_end_coord ;
 
 public:
 	IntervalFileColumnOptions() ;
@@ -34,6 +41,9 @@ public:
 	unsigned int multiplicity_column() const { return _multiplicity_column ; }
 
 	unsigned int max_used_column() const { return _max_used_column; }
+
+	bool zero_based_start_coord() const { return _zero_based_start_coord; }
+	bool zero_based_end_coord() const { return _zero_based_end_coord; }
 
 	virtual void validate() ;
 };

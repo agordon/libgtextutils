@@ -7,7 +7,6 @@
 
 /*
    Future improvements:
-     option "SKIP_FIRST_LINE",
      option "DEBUG"
      make "VERBOSE" optional
 */
@@ -19,6 +18,7 @@ class InputOutputOptions : public GenericBoostProgramOptions
 	std::string _output_filename ;
 	bool _verbose ;
 	bool _help ;
+	bool _skip_first_line ;
 
 public:
 	InputOutputOptions();
@@ -30,6 +30,7 @@ public:
 	std::string output_file() const { return _output_filename ; } 
 	bool verbose() const { return _verbose; }
 	bool help() const { return _help ; }
+	bool skip_first_line() const { return _skip_first_line; }
 };
 
 #endif
