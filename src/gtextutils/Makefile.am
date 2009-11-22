@@ -22,10 +22,7 @@ libgtextutils_la_SOURCES = stream_wrapper.cpp stream_wrapper.h \
 			  tuple_parser.h \
 			  exit_manip.h \
 			  inbuf1.hpp \
-			  pipe_fitter.c pipe_fitter.h \
-			  bpo_base.h bpo_base.cpp \
-			  bpo_interval_file.h bpo_interval_file.cpp \
-			  bpo_io.h bpo_io.cpp
+			  pipe_fitter.c pipe_fitter.h
 
 libgtextutils_la_includedir = $(includedir)/gtextutils/gtextutils
 
@@ -39,7 +36,4 @@ libgtextutils_la_include_HEADERS = container_join.h \
 		  tuple_parser.h \
 		  exit_manip.h \
 		  string_tokenize.h \
-		  pipe_fitter.h \
-		  bpo_base.h \
-		  bpo_interval_file.h \
-		  bpo_io.h
+		  pipe_fitter.h

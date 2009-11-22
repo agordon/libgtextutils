@@ -9,7 +9,7 @@
 # implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
 AC_INIT([Gordon-Text_utils-Library],
-        [0.6],
+        [0.5],
         [A. Gordon gordon@cshl.edu],
         [libgtextutils])
 
@@ -19,16 +19,13 @@ AM_CONFIG_HEADER(config.h)
 AM_INIT_AUTOMAKE([dist-bzip2])
 
 # dynamic library version
-LIBGTU_CURRENT=1
+LIBGTU_CURRENT=0
 LIBGTU_REVISION=0
-LIBGTU_AGE=1
+LIBGTU_AGE=0
 
 AC_PROG_CC
 AC_PROG_CXX
 AC_PROG_LIBTOOL
-
-AX_BOOST_BASE([1.32.0])
-AX_BOOST_PROGRAM_OPTIONS
 
 dnl --enable-wall
 EXTRA_CHECKS="-Wall -Wextra -Wformat-nonliteral -Wformat-security -Wswitch-default -Wswitch-enum -Wunused-parameter -Wfloat-equal -Werror"
