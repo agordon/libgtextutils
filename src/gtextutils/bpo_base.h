@@ -1,9 +1,7 @@
 #ifndef __BPO_BASE_H__
 #define __BPO_BASE_H__
 
-#include <boost/program_options.hpp>
 #include <vector>
-
 
 class GenericBoostProgramOptions
 {

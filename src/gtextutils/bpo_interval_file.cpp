@@ -9,38 +9,18 @@
 namespace po = boost::program_options;
 
 IntervalFileColumnOptions::IntervalFileColumnOptions() : 
-	column_options("Input file format"),
-	_bed_base(true),
-	_zero_base(false),
-	_one_base(false),
-	_zero_based_start_coord(true),
-	_zero_based_end_coord(false)
+	column_options("Input file format")
 {
 	column_options.add_options()
 		("chrom-col,c", po::value<unsigned int>(&_chrom_column)->default_value(1), "chromosome column") 
 		("start-col,s", po::value<unsigned int>(&_start_column)->default_value(2), "start-coordinate column") 
 		("end-col,e", po::value<unsigned int>(&_end_column)->default_value(3), "end-coordinate column") 
 		("orien-col,a", po::value<unsigned int>(&_orientation_column)->default_value(0), "orientation(+/-) column (default: no orientation information)") 
-		("multi-col,m", po::value<unsigned int>(&_multiplicity_column)->default_value(0), "multiplicity (=read count) column (default: no multiplicity information)") 
-		("BED-BASE", po::value<bool>(&_bed_base)->zero_tokens(), "Zero-based start coordinate, one-based end coordinate - like in BED files from UCSC.\nThis is the default." )
-		("ZERO-BASE", po::value<bool>(&_zero_base)->zero_tokens(),"BOTH start & end coordinates are zero based" )
-		("ONE-BASE", po::value<bool>(&_one_base)->zero_tokens(),"BOTH start & end coordinates are one based")
-		;
+		("multi-col,m", po::value<unsigned int>(&_multiplicity_column)->default_value(0), "multiplicity (=read count) column (default: no multiplicity information)") ;
 }
 
 void IntervalFileColumnOptions::validate() 
 {
-	if ( _bed_base ) {
-		_zero_based_start_coord = true ;
-		_zero_based_end_coord = false ;
-	} else if ( _zero_base ) {
-		_zero_based_start_coord = true ;
-		_zero_based_end_coord = true ;
-	} else if ( _one_base ) {
-		_zero_based_start_coord = false ;
-		_zero_based_end_coord = false ;
-	}
-
 	std::stringstream os ;
 	if (_chrom_column <= 0) {
 		os << "Invalid chromosome-column value: '" << _chrom_column << "' - must be larger than zero" ;
@@ -55,7 +35,7 @@ void IntervalFileColumnOptions::validate()
 		throw po::error(os.str()) ;
 	}
 
-	std::vector<unsigned int> columns;
+	std::vector<int> columns;
 	columns.push_back ( _chrom_column );
 
 	if ( std::find(columns.begin(), columns.end(), _start_column ) != columns.end()) {
