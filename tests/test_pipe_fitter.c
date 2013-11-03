@@ -1,6 +1,6 @@
 /*
    Gordon's Text-Utilities Library
-   Copyright (C) 2009 Assaf Gordon (gordon@cshl.edu)
+   Copyright (C) 2009-2013 Assaf Gordon (assafgordon@gmail.com)
 
    This program is free software: you can redistribute it and/or modify
    it under the terms of the GNU Affero General Public License as published by
