@@ -34,7 +34,7 @@ check_PROGRAMS = test_container_join \
 TESTS = $(check_PROGRAMS)
 
 LDADD = $(top_srcdir)/src/gtextutils/libgtextutils.la
-INCLUDES = -I$(top_srcdir)/src
+AM_CPPFLAGS = -I$(top_srcdir)/src
 
 test_container_join_SOURCES = test_container_join.cpp tests_assertion.h
 test_natural_sort_SOURCES = test_natural_sort.cpp tests_assertion.h

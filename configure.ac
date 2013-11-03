@@ -9,8 +9,8 @@
 # implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
 AC_INIT([Gordon-Text_utils-Library],
-        [0.6],
-        [A. Gordon gordon@cshl.edu],
+        [0.7-rc1],
+        [A. Gordon assafgordon@gmail.com],
         [libgtextutils])
 
 AC_CONFIG_AUX_DIR(config)
@@ -78,7 +78,6 @@ AC_SUBST(LIBGTU_AGE)
 
 AC_CONFIG_FILES([
    Makefile
-   README
    doc/Makefile
    m4/Makefile
    src/Makefile

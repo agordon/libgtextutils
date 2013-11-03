@@ -32,7 +32,7 @@ int pipe_close ( int fd, pid_t pid )
 	int exit_code;
 
 	i = close(fd);
-	if ( fd == -1 ) 
+	if ( i == -1 ) 
 		err(1,"close(in pipe_close) failed");
 
 	p = waitpid(pid, &status, 0);
