@@ -9,15 +9,16 @@
 # implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
 
-EXTRA_DIST = test.txt
-noinst_DATA = test.txt
-
 if TUPLE_PARSER_CHECK
 TUPLE_PROG = test_tuple_parser \
 	     test_tuple_parser_file
 else
 TUPLE_PROG = 
 endif
+
+AM_TESTS_ENVIRONMENT=\
+	printf "first line\nsecond line\nthird line\nfourth line\n" > test.txt;
+
 
 check_PROGRAMS = test_container_join \
 		 test_natural_sort \
@@ -33,7 +34,7 @@ check_PROGRAMS = test_container_join \
 
 TESTS = $(check_PROGRAMS)
 
-LDADD = $(top_srcdir)/src/gtextutils/libgtextutils.la
+LDADD = $(top_builddir)/src/gtextutils/libgtextutils.la
 AM_CPPFLAGS = -I$(top_srcdir)/src
 
 test_container_join_SOURCES = test_container_join.cpp tests_assertion.h

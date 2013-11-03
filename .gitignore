@@ -11,6 +11,9 @@ src/gtextutils/.libs/
 src/gtextutils/*.o
 src/gtextutils/*.la
 src/gtextutils/*.lo
+tests/*.o
+tests/*.trs
+tests/*.log
 
 aclocal.m4
 autom4te.cache/*
@@ -28,3 +31,23 @@ m4/ltsugar.m4
 m4/ltversion.m4
 m4/lt~obsolete.m4
 stamp-h1
+
+libgtextutils-*.tar.bz2
+libgtextutils-*.tar.gz
+
+tests/.libs
+
+tests/fdout.txt.gz
+tests/pipe_out.txt.gz
+
+tests/test_container_join
+tests/test_fd_inbuf
+tests/test_fd_outbuf
+tests/test_in_out_buf
+tests/test_input_stream_wrapper
+tests/test_natural_sort
+tests/test_pipe_fitter
+tests/test_string_tokenize
+tests/test_text_reader
+tests/test_text_reader_unget
+

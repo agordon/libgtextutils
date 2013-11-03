@@ -15,3 +15,9 @@ ACLOCAL_AMFLAGS = -I m4
 
 pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA = gtextutils.pc
+
+distcleancheck_listfiles=\
+			./tests/test.txt \
+			./tests/fdout.txt.gz \
+			./tests/pipe_out.txt.gz
+
