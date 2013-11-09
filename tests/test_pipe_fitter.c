@@ -23,6 +23,7 @@
 #include <fcntl.h>
 #include <stdio.h>
 #include <string.h>
+#include <err.h>
 
 #include <gtextutils/pipe_fitter.h>
 #include "tests_assertion.h"
@@ -36,10 +37,13 @@ int main()
 	char temp[1000];
 	char str[1000];
 	int n ;
+	int i ;
 
 	//Pipe output through a GZIP program
 	fd = pipe_output_command ( "gzip", "pipe_out.txt.gz", &pid ) ;
-	write ( fd, text, strlen(text))  ;
+	i = write ( fd, text, strlen(text))  ;
+	if ( i == -1 )
+		err(1,"write failed");
 	pipe_close(fd, pid);
 
 
