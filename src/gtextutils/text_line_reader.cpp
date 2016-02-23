@@ -44,6 +44,6 @@ bool TextLineReader::next_line()
 	if (input_stream.eof())
 		return false;
 
-	return input_stream ;
+	return static_cast<bool>(input_stream) ;
 }
 
