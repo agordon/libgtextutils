@@ -31,7 +31,7 @@
  * and I prefer not to use it for now.
  *
  * Note 2:
- * As of FSF GNU Coreutils version 7.1, the 'sort' progarm as a similar sorting order
+ * As of FSF GNU Coreutils version 7.1, the 'sort' program as a similar sorting order
  * called 'version' (with the -V command argument).
  * Coreutils's implementation is found in <coreutils-7.1>/src/filevercmp.{ch}.
  * The results are similar to Matrin Poo's NatSort, but not identical

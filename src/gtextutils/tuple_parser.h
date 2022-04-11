@@ -14,7 +14,7 @@
 //#define TUPLE_PARSER_DEBUG
 
 /*
-   The maximun valid number for a column.
+   The maximum valid number for a column.
    The value is used in a bitset to prevent duplicated columns.
 */
 #ifndef TUPLE_PARSER_MAX_COLUMN_NUMBER
@@ -257,7 +257,7 @@ public:
 	Users should use a Tuple_Parser<> instead of _Tuple_Parser_impl<>.
 
 	
-	Usage exmaple:
+	Usage example:
 
 	  //Define a parser that extracts three fields from an input stream:
 	  //an int, a string and a double.

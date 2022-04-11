@@ -111,7 +111,7 @@ void test_parser_parsing_error()
 		//We should not get here
 		ASSERT ( ! "Invalid input not detected." ) ;
 	} catch ( tuple_parser_parsing_error &ex ) {
-		//exception was thrown. valid reported errornous columns
+		//exception was thrown. valid reported erroneous columns
 		ASSERT ( ex.column() == 4 ) ;
 	}
 }
@@ -139,7 +139,7 @@ void test_parser_premature_eol()
 		//We should not get here
 		ASSERT ( ! "premature-end-of-line not detected." ) ;
 	} catch ( tuple_parser_premature_end_of_line &ex ) {
-		//exception was thrown. valid reported errornous columns
+		//exception was thrown. valid reported erroneous columns
 		ASSERT ( ex.expected_columns() == 4 ) ;
 
 		ASSERT ( ex.actual_columns() == 2 ) ;
